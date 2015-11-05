@@ -9,7 +9,20 @@ public class Movement : MonoBehaviour {
 	public float cooldown;
 
 	public float timer;
+
+
+	public int width = 6;
+	public int height = 10;
+	public int[][] flag; 
+
 	void Start () {
+
+		flag = new int[width][];
+		for (int i=0; i< width; ++i) {
+			flag[i] = new int[height];
+
+		}
+
 		timer = 0;
 	}
 	
@@ -40,7 +53,7 @@ public class Movement : MonoBehaviour {
 	}
 	void MoveByPlayer(){
 
-		Debug.Log ( Mathf.Round(transform.position.x) + " " + Mathf.Round(transform.position.y) );
+		Debug.Log ( Mathf.Round(transform.position.y) + " " + Mathf.Round(transform.position.x) );
 
 		float x = Mathf.Floor(Input.GetAxis("Horizontal"));
 		if (Input.GetAxis ("Horizontal") > 0)
